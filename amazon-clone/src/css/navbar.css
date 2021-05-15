@@ -1,3 +1,55 @@
 .navbar{
-    background-color: blanchedalmond;
+    display: flex;
+    height: 70px;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color:  #232F3E;
+    position: sticky;
+}
+.navbar button{
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+    cursor: pointer;
+    color: white;
+}
+@media screen and (max-width: 600px){
+   
+    /* if the screen is small we will only display the input element and search button*/
+    .navbar-option{
+        display: none;
+    }
+    
+}
+.navbar-menu-icon{
+    color:white;
+    padding: 2px;
+    margin-left: 5px;
+}
+.navbar-amazon-icon{
+    width: 100px;
+    object-fit: contain;
+    padding: 2px;
+    margin-left: 5px;
+}
+.navbar-input{
+    flex: 1;
+    padding: 2px;
+    margin-left: 5px;
+    height: 20px;
+}
+.navbar-search-icon{
+    background-color: #FEBD69;
+    height: 20px;
+}
+.navbar-option{
+    color:white;
+    margin-left: 5px;
+    padding: 2px;
+}
+.navbar-option-line-two{
+    font-weight: 700;
+}
+.options-shopping-cart-item{
+    height: 20px;
 }
