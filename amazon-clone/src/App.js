@@ -1,9 +1,11 @@
-import './App.css';
-
+import './app.css';
+import Navbar from "./components/NavbarComponent";
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <h1>Hello This is amazon-clone</h1>
+      {/* NavBar Component */}
+      <Navbar/>
     </div>
   );
 }
