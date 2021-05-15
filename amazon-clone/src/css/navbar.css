@@ -45,11 +45,15 @@
 .navbar-option{
     color:white;
     margin-left: 5px;
+    margin-right: 5px;
     padding: 2px;
 }
 .navbar-option-line-two{
     font-weight: 700;
 }
-.options-shopping-cart-item{
+.options-shopping-cart-icon{
     height: 20px;
+}
+.options-shopping-cart-quantity{
+    text-align: center;
 }

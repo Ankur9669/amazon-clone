@@ -47,9 +47,9 @@ function NavbarComponent()
             </div>
             {/* option-4 */}
             <div className = "navbar-option">
-                <p>1</p>
+                <p className = "options-shopping-cart-quantity">0</p>
                 <button>
-                    <ShoppingCartIcon className = "options-shopping-cart-item"/>
+                    <ShoppingCartIcon className = "options-shopping-cart-icon"/>
                 </button>
             </div>   
         </div>

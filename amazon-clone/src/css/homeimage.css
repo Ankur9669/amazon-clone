@@ -1,0 +1,8 @@
+
+.home-image-container{
+    width: var(--width);
+}
+.home-image{
+    object-fit: contain;
+    width: 100%; 
+}
