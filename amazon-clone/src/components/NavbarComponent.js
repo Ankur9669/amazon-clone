@@ -3,8 +3,10 @@ import "../css/navbar.css";
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-function NavbarComponent() 
+function NavbarComponent(props) 
 {
+    let userName = props.userName;
+    let noOfItemsInCart = props.noOfItemsInCart;
     return (
         <div className = "navbar">
 
@@ -26,7 +28,7 @@ function NavbarComponent()
 
             {/* option-1 */}
             <div className = "navbar-option">
-                <p className = "navbar-option-line-one">Hello guest</p>
+                <p className = "navbar-option-line-one">Hello {userName}</p>
                 <button>
                 <p className = "navbar-option-line-two">Signin</p>
                 </button>
@@ -47,7 +49,7 @@ function NavbarComponent()
             </div>
             {/* option-4 */}
             <div className = "navbar-option">
-                <p className = "options-shopping-cart-quantity">0</p>
+                <p className = "options-shopping-cart-quantity">{noOfItemsInCart}</p>
                 <button>
                     <ShoppingCartIcon className = "options-shopping-cart-icon"/>
                 </button>

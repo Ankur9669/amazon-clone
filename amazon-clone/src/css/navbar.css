@@ -1,10 +1,13 @@
 .navbar{
     display: flex;
     height: 70px;
+    width: 100%;
     flex-wrap: wrap;
     align-items: center;
     background-color:  #232F3E;
     position: sticky;
+    z-index: 100;
+    top: 0;
 }
 .navbar button{
     background-color: transparent;
