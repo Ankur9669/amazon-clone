@@ -3,6 +3,8 @@ import Navbar from "./components/NavbarComponent";
 import HomeImage from "./components/HomeImageComponent";
 import Products from "./components/Product";
 import {useState} from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import CheckOut from "./components/CheckoutComponent";
 function App() 
 {
   let products = [
@@ -53,30 +55,50 @@ function App()
     }
   ];
 
+  var shoppingCartItems = [];
+
   const [userName, setUserName] = useState("Guest");
   const [noOfItemsInCart, setNoOfItemsIncart] = useState(0);
-  function increase()
+
+  //This increases the count over shopping cart
+  function increase(product)
   {
+    //Adding the particular item in the start of the array.
+    shoppingCartItems.unshift(product);
+    console.log(shoppingCartItems);
+
+    //Inscresing the count by one.
     setNoOfItemsIncart(noOfItemsInCart + 1);
   }
   return (
     <div className="app">
+       {/* NavBar Component */}
+       <Navbar userName = {userName} noOfItemsInCart = {noOfItemsInCart}/>
+       <Router>
+         <Switch>
+          <Route path="/checkout">
+            <CheckOut shoppingCartItems = {shoppingCartItems}/>
+          </Route>
+          
+         <Route exact path = "/">
+           {/* HomePage */}
+          <Route exact path = "/">
+            {/* HomeImage */}
+            <HomeImage/>
 
-      {/* NavBar Component */}
-      <Navbar userName = {userName} noOfItemsInCart = {noOfItemsInCart}/>
-
-      {/* HomeImage */}
-      <HomeImage/>
-
-      {/* Products */}
-      <div className = "products">
-        {
-          products.map(product => {
-            return <Products product = {product} setNoOfItemsInCart = {increase}/>
-          })
-        }
-        
-      </div>
+            {/* Products */}
+            <div className = "products">
+            {
+              products.map(product => 
+              {
+                return <Products product = {product} key = {product.productId} setNoOfItemsInCart = {increase}/>
+              })
+            }
+            </div>
+          </Route>
+         </Route>
+         </Switch>
+        </Router>
     </div>
   );
 }

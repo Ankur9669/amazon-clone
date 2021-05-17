@@ -27,7 +27,7 @@ function Product(props)
         </div>
         <div className = "product-btn-container">
             <button className="product-add-to-basket-btn"
-            onClick = {() => props.setNoOfItemsInCart()}>Add to Basket</button>
+            onClick = {() => props.setNoOfItemsInCart(product)}>Add to Basket</button>
         </div>
         
       </div>
