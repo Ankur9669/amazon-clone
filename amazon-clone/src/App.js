@@ -20,33 +20,37 @@ function App()
     },
     {
       productId: 2,
-      productTitle: "The Lean Startup: How Constant Innovation creates" 
-      + "Constant succesfull business asdjasdjh, asdnasmd asd asdāśd" +  
-     "as da sd a sda sdasd asdasdasd asdasd",
+      productTitle: "Xiaomi POCO M3 Smartphone, 4 GB + 64 GB, 6.53 Pollici FHD + Ampio 1080P FHD + Display 52 MP, Tripla Fotocamera, 6000 mAh Batteria, Doppi Altoparlanti",
       productPrice: "$11.47",
       productrating: 3,
-      productImage: "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+      productImage: "https://m.media-amazon.com/images/I/61gQhjBgwBL._AC_UL320_.jpg"
     },
     {
       productId: 3,
-      productTitle: "The Lean Startup: How Constant Innovation creates" 
-      + "Constant succesfull business asdjasdjh, asdnasmd asd asdāśd" +  
-     "as da sd a sda sdasd asdasdasd asdasd",
+      productTitle: "2020 Apple MacBook Air with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage, backlit keyboard) - Space Gray",
       productPrice: "$11.47",
       productrating: 3,
-      productImage: "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+      productImage: "https://m.media-amazon.com/images/I/71an9eiBxpL._AC_UY218_.jpg"
     },
     {
       productId: 4,
-      productTitle: "The Lean Startup: How Constant Innovation creates" 
-      + "Constant succesfull business asdjasdjh, asdnasmd asd asdāśd" +  
-     "as da sd a sda sdasd asdasdasd asdasd",
+      productTitle: "Hisense 40-Inch 40H5500F Class H55 Series Android Smart TV with Voice Remote (2020 Model)",
       productPrice: "$11.47",
       productrating: 3,
-      productImage: "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+      productImage: "https://m.media-amazon.com/images/I/61lJa-K8CqL._AC_UL320_.jpg"
     },
-  
   ];
+  let productCss = {
+    product_container_css : "product",
+    product_title_css: "product-title",
+    product_info_css: "product-info",
+    product_price_css: "product-price",
+    product_rating_css: "product-rating",
+    product_image_container_css: "product-image-container",
+    product_image_css: "product-image",
+    product_btn_container_css: "product-btn-container",
+    product_add_to_basket_btn_css: "product-add-to-basket-btn"
+  }
 
   return (
     <div className="app">
@@ -69,7 +73,10 @@ function App()
             {
               products.map(product => 
               {
-                return <Products product = {product} key = {product.productId}/>
+                return <Products product = {product} 
+                key = {product.productId} 
+                productCss = {productCss}
+                productBtnText = {"Add to Basket"}/>
               })
             }
             </div>

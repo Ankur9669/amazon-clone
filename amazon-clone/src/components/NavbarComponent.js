@@ -58,7 +58,7 @@ function NavbarComponent(props)
             <Link to = "/checkout">
             {/* option-4 */}
             <div className = "navbar-option">
-                <p className = "options-shopping-cart-quantity">{state.basket.length}</p>
+                <p className = "options-shopping-cart-quantity">{state.basket?.length}</p>
                 <ShoppingCartIcon className = "options-shopping-cart-icon"/>
             </div>   
             </Link>
