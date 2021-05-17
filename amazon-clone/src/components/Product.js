@@ -23,10 +23,29 @@ function Product(props)
     let product_add_to_basket_btn_css = productCss.product_add_to_basket_btn_css;
 
     const [state, dispatch] = useStateValue();
+    function onClick(buttonText)
+    {
+      buttonText = buttonText.toLowerCase();
+      if(buttonText === "add to basket")
+      {
+        addToBasket();
+      }
+      else{
+        removeFromBasket();
+      }
+    }
     function addToBasket()
     {
       dispatch({
         type: "ADD_TO_BASKET",
+        item: product,
+      });
+    }
+
+    function removeFromBasket()
+    {
+      dispatch({
+        type: "REMOVE_FROM_BASKET",
         item: product,
       });
     }
@@ -50,7 +69,7 @@ function Product(props)
         </div>
         <div className = {product_btn_container_css}>
             <button className = {product_add_to_basket_btn_css}
-            onClick = {() => addToBasket()}>{productBtnText}</button>
+            onClick = {() => onClick(productBtnText)}>{productBtnText}</button>
         </div>
         
       </div>

@@ -27,7 +27,7 @@ function CheckoutComponent()
                 <h1 className = "checkout-title">Your Shopping Basket</h1>
                 {
                     basket.map(item => {
-                        console.log(item);
+                        //console.log(item);
                         return <Product product = {item} 
                         key = {item.id}
                         productCss = {productCss}
@@ -36,7 +36,7 @@ function CheckoutComponent()
                 }
             </div>  
             <div className = "checkout-right">
-                <Subtotal/>
+                <Subtotal totalNumberOfItems = {state.basket.length}/>
             </div>      
         </div>
     )
