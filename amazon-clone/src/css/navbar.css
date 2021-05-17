@@ -4,7 +4,7 @@
     width: 100%;
     flex-wrap: wrap;
     align-items: center;
-    background-color:  #232F3E;
+    background-color:  #131921;
     position: sticky;
     z-index: 100;
     top: 0;
@@ -30,8 +30,9 @@
     margin-left: 5px;
 }
 .navbar-amazon-icon{
-    width: 100px;
+    width: 90px;
     object-fit: contain;
+    margin-top: 16px;
     padding: 2px;
     margin-left: 5px;
 }
@@ -42,8 +43,7 @@
     height: 20px;
 }
 .navbar-search-icon{
-    background-color: #FEBD69;
-    height: 20px;
+    background-color: #FEBD69;  
 }
 .navbar-option{
     color:white;

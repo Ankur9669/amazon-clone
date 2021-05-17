@@ -57,8 +57,16 @@ function Product(props)
             {productTitle}
           </p>
           <p className = {product_price_css}>{productPrice}</p>
-          <p className = {product_rating_css}>⭐⭐⭐⭐
-          </p>
+          {
+            Array(productRating)
+            .fill()
+            .map((i) => {
+              return <p className = {product_rating_css}>
+               ⭐
+              </p>
+            })
+          }
+          
         </div>
         <div className = {product_image_container_css}>
           <img
