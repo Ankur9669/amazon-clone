@@ -1,5 +1,6 @@
 import React from 'react'
 import "../css/product.css";
+import { useStateValue } from '../StateProvider';
 function Product(props)
 {
     let product = props.product;
@@ -8,6 +9,16 @@ function Product(props)
     let productRating = product.productRating;
     let productImage = product.productImage;
 
+    const [state, dispatch] = useStateValue();
+    function addToBasket()
+    {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: product,
+      });
+      console.log(state.basket);
+    }
+    
     return (
         <div className="product">
         <div className="product-info">
@@ -27,11 +38,12 @@ function Product(props)
         </div>
         <div className = "product-btn-container">
             <button className="product-add-to-basket-btn"
-            onClick = {() => props.setNoOfItemsInCart(product)}>Add to Basket</button>
+            onClick = {() => addToBasket()}>Add to Basket</button>
         </div>
         
       </div>
     )
 }
+
 
 export default Product

@@ -3,21 +3,25 @@ import "../css/navbar.css";
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
 function NavbarComponent(props) 
 {
-    let userName = props.userName;
-    let noOfItemsInCart = props.noOfItemsInCart;
+    // let userName = props.userName;
+    // let noOfItemsInCart = props.noOfItemsInCart;
+    const [state, dispatch] = useStateValue();
     return (
         <div className = "navbar">
 
             {/* Menu icon */}
-            <button>
             <MenuIcon className = "navbar-menu-icon"/>
-            </button>
+
+            <Link to = "/">
             {/* Amazon icon */}
             <img src = "http://pngimg.com/uploads/amazon/amazon_PNG11.png"
             className = "navbar-amazon-icon"/>
+            </Link>
 
             {/* Search Bar Input */}     
             <input type = "text" className = "navbar-input"></input>
@@ -29,7 +33,7 @@ function NavbarComponent(props)
 
             {/* option-1 */}
             <div className = "navbar-option">
-                <p className = "navbar-option-line-one">Hello {userName}</p>
+                <p className = "navbar-option-line-one">Hello Guest</p>
                 <button>
                 <p className = "navbar-option-line-two">Signin</p>
                 </button>
@@ -51,13 +55,13 @@ function NavbarComponent(props)
                 </button>
             </div>
 
+            <Link to = "/checkout">
             {/* option-4 */}
             <div className = "navbar-option">
-                <p className = "options-shopping-cart-quantity">{noOfItemsInCart}</p>
-                <button>
-                    <ShoppingCartIcon className = "options-shopping-cart-icon"/>
-                </button>
+                <p className = "options-shopping-cart-quantity">{state.basket.length}</p>
+                <ShoppingCartIcon className = "options-shopping-cart-icon"/>
             </div>   
+            </Link>
         </div>
     )
 }
