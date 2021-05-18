@@ -6,6 +6,7 @@ import {useState} from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import CheckOut from "./components/CheckoutComponent";
 import { useStateValue } from './StateProvider';
+import LoginComponent from './components/LoginComponent';
 function App() 
 {
   let products = [
@@ -55,16 +56,22 @@ function App()
   return (
     <div className="app">
        <Router>
-         {/* NavBar Component */}
-       <Navbar/>
          <Switch>
           <Route path="/checkout">
+            {/* NavBar Component */}
+            <Navbar/>
             <CheckOut/>
           </Route>
           
+        <Route path = "/signin">
+          <LoginComponent/>
+        </Route>
+
          <Route exact path = "/">
            {/* HomePage */}
           
+           {/* NavBar Component */}
+           <Navbar/>
             {/* HomeImage */}
             <HomeImage/>
 

@@ -16,6 +16,7 @@
     cursor: pointer;
     color: white;
 }
+
 @media screen and (max-width: 600px){
    
     /* if the screen is small we will only display the input element and search button*/
@@ -44,6 +45,9 @@
 }
 .navbar-search-icon{
     background-color: #FEBD69;  
+}
+.link{
+    text-decoration: none;
 }
 .navbar-option{
     color:white;

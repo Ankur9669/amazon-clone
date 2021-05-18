@@ -32,12 +32,12 @@ function NavbarComponent(props)
             </button>
 
             {/* option-1 */}
+            <Link to = "/signin" className = "link">
             <div className = "navbar-option">
                 <p className = "navbar-option-line-one">Hello Guest</p>
-                <button>
                 <p className = "navbar-option-line-two">Signin</p>
-                </button>
             </div>
+            </Link>
 
             {/* option-2 */}
             <div className = "navbar-option">
@@ -55,7 +55,7 @@ function NavbarComponent(props)
                 </button>
             </div>
 
-            <Link to = "/checkout">
+            <Link to = "/checkout" className = "link">
             {/* option-4 */}
             <div className = "navbar-option">
                 <p className = "options-shopping-cart-quantity">{state.basket?.length}</p>
