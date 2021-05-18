@@ -1,5 +1,6 @@
 import React from 'react'
 import "../css/checkout.css";
+import { getBasketTotal, getBasketTotal1 } from '../Reducer';
 import { useStateValue } from '../StateProvider';
 import Product from './Product';
 import Subtotal from './SubtotalComponent';
@@ -8,6 +9,8 @@ function CheckoutComponent()
     const [state, dispatch] = useStateValue();
     let basket = state.basket;
 
+    let basketTotal = getBasketTotal(basket);
+    
     let productCss = {
       product_container_css : "checkout-product",
       product_title_css: "checkout-product-title",
@@ -36,7 +39,8 @@ function CheckoutComponent()
                 }
             </div>  
             <div className = "checkout-right">
-                <Subtotal totalNumberOfItems = {state.basket.length}/>
+                <Subtotal totalNumberOfItems = {state.basket.length}
+                basketTotal = {basketTotal}/>
             </div>      
         </div>
     )

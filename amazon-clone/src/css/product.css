@@ -21,6 +21,7 @@
     text-align: start;
   }
   .product-rating {
+    display: inline;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     text-align: start;

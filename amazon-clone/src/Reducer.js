@@ -2,6 +2,17 @@ export const initialState = {
     basket: [],
 }
 
+// export const getBasketTotal = (basket) => 
+// basket?.reduce((amount, item) => item.productPrice + amount, 0);
+
+export const getBasketTotal = (basket) => {
+    let total = 0;
+    basket.map(item => {
+        total = total + item.productPrice;
+    })
+    return Math.round(total * 100) / 100;
+}
+
 const reducer = (state, action) => {
    //console.log(action);
     switch (action.type) 

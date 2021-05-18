@@ -14,28 +14,28 @@ function App()
       productTitle: "The Lean Startup: How Constant Innovation creates" 
       + "Constant succesfull business asdjasdjh, asdnasmd asd asdāśd" +  
      "as da sd a sda sdasd asdasdasd asdasd",
-      productPrice: "$11.47",
+      productPrice: 11.47,
       productrating: 3,
       productImage: "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
     },
     {
       productId: 2,
       productTitle: "Xiaomi POCO M3 Smartphone, 4 GB + 64 GB, 6.53 Pollici FHD + Ampio 1080P FHD + Display 52 MP, Tripla Fotocamera, 6000 mAh Batteria, Doppi Altoparlanti",
-      productPrice: "$11.47",
+      productPrice: 11.47,
       productrating: 3,
       productImage: "https://m.media-amazon.com/images/I/61gQhjBgwBL._AC_UL320_.jpg"
     },
     {
       productId: 3,
       productTitle: "2020 Apple MacBook Air with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage, backlit keyboard) - Space Gray",
-      productPrice: "$11.47",
+      productPrice: 11.47,
       productrating: 3,
       productImage: "https://m.media-amazon.com/images/I/71an9eiBxpL._AC_UY218_.jpg"
     },
     {
       productId: 4,
       productTitle: "Hisense 40-Inch 40H5500F Class H55 Series Android Smart TV with Voice Remote (2020 Model)",
-      productPrice: "$11.47",
+      productPrice: 11.47,
       productrating: 3,
       productImage: "https://m.media-amazon.com/images/I/61lJa-K8CqL._AC_UL320_.jpg"
     },

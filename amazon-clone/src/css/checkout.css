@@ -67,6 +67,11 @@
 .checkout-product-image{
     height: 200px;
 }
+.checkout-product-rating{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline;
+}
 .checkout-product-btn-container{
     display: flex;
     justify-content: center;

@@ -6,7 +6,7 @@ function Product(props)
     let product = props.product;
     let productTitle = product.productTitle;
     let productPrice = product.productPrice;
-    let productRating = product.productRating;
+    let productRating = product.productrating;
     let productImage = product.productImage;
     let productBtnText = props.productBtnText;
 
@@ -56,15 +56,13 @@ function Product(props)
           <p className = {product_title_css}>
             {productTitle}
           </p>
-          <p className = {product_price_css}>{productPrice}</p>
+          <p className = {product_price_css}>${productPrice}</p>
           {
             Array(productRating)
             .fill()
-            .map((i) => {
-              return <p className = {product_rating_css}>
-               ⭐
-              </p>
-            })
+            .map((i) => (
+               <p className = {product_rating_css}>⭐</p>
+            ))
           }
           
         </div>
