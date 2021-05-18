@@ -11,6 +11,14 @@ function NavbarComponent(props)
     // let userName = props.userName;
     // let noOfItemsInCart = props.noOfItemsInCart;
     const [state, dispatch] = useStateValue();
+    let signInBtnText;
+    if(state.user === "Hello Guest")
+    {
+        signInBtnText = "SignIn";
+    }
+    else{
+        signInBtnText = "SignOut";
+    }
     return (
         <div className = "navbar">
 
@@ -34,8 +42,8 @@ function NavbarComponent(props)
             {/* option-1 */}
             <Link to = "/signin" className = "link">
             <div className = "navbar-option">
-                <p className = "navbar-option-line-one">Hello Guest</p>
-                <p className = "navbar-option-line-two">Signin</p>
+                <p className = "navbar-option-line-one">{state.user}</p>
+                <p className = "navbar-option-line-two">{signInBtnText}</p>
             </div>
             </Link>
 
