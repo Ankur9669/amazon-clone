@@ -15,7 +15,7 @@ function LoginComponent() {
                 <label for = "password" className = "label-password">Password: </label>
                 <input type = "password" id = "password" className = "text-password"></input>
                 <button className = "sign-in-btn">Sign In</button>
-                <small className = "privacy-notice-text">By signing-in you agree to Amazon's Conditions of Use & Sale. Please see our Privacy Notice, 
+                <small className = "privacy-notice-text">By signing-in you agree to <strong>Amazon's Fake clone</strong> Conditions of Use & Sale. Please see our Privacy Notice, 
                     our Cookies Notice and our Interest-Based Ads Notice.</small>
                 <button className = "create-new-account-btn">Create New Account</button>
             </form>
