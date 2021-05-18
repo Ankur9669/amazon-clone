@@ -5,13 +5,23 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
-
+import {auth} from "../firebase";
 function NavbarComponent(props) 
 {
-    // let userName = props.userName;
-    // let noOfItemsInCart = props.noOfItemsInCart;
+
+    function handleAuthentication()
+    {
+        //If the user is logged in then
+        if(!(state.user === "Hello Guest"))
+        {
+            auth().signOut();
+        }
+    }
+    
     const [state, dispatch] = useStateValue();
     let signInBtnText;
+
+    //If the user is signed in then display SignIn else display SignOut
     if(state.user === "Hello Guest")
     {
         signInBtnText = "SignIn";
@@ -40,8 +50,10 @@ function NavbarComponent(props)
             </button>
 
             {/* option-1 */}
-            <Link to = "/signin" className = "link">
-            <div className = "navbar-option">
+            {/* if user is not logged in go to sign in page else
+            just log out */}
+            <Link to = {!(state.user != "Hello Guest") && "/signin"} className = "link">
+            <div onClick = {handleAuthentication} className = "navbar-option">
                 <p className = "navbar-option-line-one">{state.user}</p>
                 <p className = "navbar-option-line-two">{signInBtnText}</p>
             </div>

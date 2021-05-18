@@ -6,6 +6,8 @@ import {useState} from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import CheckOut from "./components/CheckoutComponent";
 import { useStateValue } from './StateProvider';
+import { auth } from "./firebase";
+import { useEffect } from "react";
 import LoginComponent from './components/LoginComponent';
 function App() 
 {
@@ -52,6 +54,29 @@ function App()
     product_btn_container_css: "product-btn-container",
     product_add_to_basket_btn_css: "product-add-to-basket-btn"
   }
+  const [user, dispatch] = useStateValue();
+
+  useEffect(() => 
+  {
+    auth().onAuthStateChanged(authUser => {
+      if(authUser)
+      {
+        console.log(authUser.email)
+        dispatch({
+          type: "SET_USER",
+          user: authUser.email,
+        })
+      }
+      else
+      {
+        dispatch({
+          type: "SET_USER",
+          user: "Hello Guest",
+        })
+      }
+    })
+  }, []);
+
 
   return (
     <div className="app">

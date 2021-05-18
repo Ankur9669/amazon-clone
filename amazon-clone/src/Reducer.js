@@ -47,7 +47,7 @@ const reducer = (state, action) => {
                 basket: newBasket,
             };
 
-        case "SIGN_IN":
+        case "SET_USER":
             return{
                 ...state,
                 user: action.user,
