@@ -56,12 +56,14 @@ function App()
   }
   const [user, dispatch] = useStateValue();
 
+  //This is load after the component is loaded
   useEffect(() => 
   {
+    //Adding the listener on auth
     auth().onAuthStateChanged(authUser => {
       if(authUser)
       {
-        console.log(authUser.email)
+        //If user is authenticated
         dispatch({
           type: "SET_USER",
           user: authUser.email,
