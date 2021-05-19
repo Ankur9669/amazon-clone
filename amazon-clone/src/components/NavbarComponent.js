@@ -41,6 +41,7 @@ function NavbarComponent(props)
             className = "navbar-amazon-icon"/>
             </Link>
 
+            
             {/* Search Bar Input */}     
             <input type = "text" className = "navbar-input"></input>
 
@@ -48,7 +49,7 @@ function NavbarComponent(props)
             {/* Search Bar Icon */}
             <SearchIcon className = "navbar-search-icon"/>
             </button>
-
+            
            
             {/* option-1 */}
             {/* if user is not logged in go to sign in page else
