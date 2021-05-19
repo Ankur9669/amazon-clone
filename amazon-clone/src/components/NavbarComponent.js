@@ -43,7 +43,7 @@ function NavbarComponent(props)
 
             
             {/* Search Bar Input */}     
-            <input type = "text" className = "navbar-input"></input>
+            <input type = "text" className = "navbar-input" placeholder = "Enter the text"></input>
 
             <button>
             {/* Search Bar Icon */}
