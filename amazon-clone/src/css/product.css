@@ -6,6 +6,11 @@
     height: fit-content;
     width: fit-content;
   }
+.product:hover{
+  transition: 100ms;
+  transform: translateY(-10px);
+  box-shadow: 10px 10px 5px grey;
+}
   .product-info {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -47,4 +52,8 @@
     padding: 0.5rem 0.5rem;
     background-color: #febd69;
     cursor: pointer;
+  }
+  .product-add-to-basket-btn:hover{
+    box-shadow: 6px 2px 2px #f5bf2a;
+    font-weight: 600;
   }
