@@ -49,6 +49,7 @@ function NavbarComponent(props)
             <SearchIcon className = "navbar-search-icon"/>
             </button>
 
+           
             {/* option-1 */}
             {/* if user is not logged in go to sign in page else
             just log out */}
@@ -82,6 +83,7 @@ function NavbarComponent(props)
                 <ShoppingCartIcon className = "options-shopping-cart-icon"/>
             </div>   
             </Link>
+            
         </div>
     )
 }

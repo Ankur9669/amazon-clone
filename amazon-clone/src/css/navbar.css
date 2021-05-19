@@ -23,7 +23,13 @@
     .navbar-option{
         display: none;
     }
-    
+    .navbar-input{
+        flex: 1;
+        padding: 2px;
+        margin-left: 5px;
+        height: 20px;
+        margin-right: 10px;
+    }
 }
 .navbar-menu-icon{
     color:white;
@@ -48,6 +54,10 @@
 }
 .link{
     text-decoration: none;
+}
+.navbar-option-container{
+    display: flex;
+    flex-direction: row;
 }
 .navbar-option{
     color:white;

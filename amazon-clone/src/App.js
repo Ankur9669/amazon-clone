@@ -87,7 +87,9 @@ function App()
           <Route path="/checkout">
             {/* NavBar Component */}
             <Navbar/>
-            <CheckOut/>
+            <div className = "checkout-page-container">
+              <CheckOut/>
+            </div>
           </Route>
           
         <Route path = "/signin">
@@ -99,21 +101,23 @@ function App()
           
            {/* NavBar Component */}
            <Navbar/>
-            {/* HomeImage */}
-            <HomeImage/>
+           <div className = "home-page-container">
+              {/* HomeImage */}
+              <HomeImage/>
 
-            {/* Products */}
-            <div className = "products">
-            {
-              products.map(product => 
+              {/* Products */}
+              <div className = "products">
               {
-                return <Products product = {product} 
-                key = {product.productId} 
-                productCss = {productCss}
-                productBtnText = {"Add to Basket"}/>
-              })
-            }
-            </div>
+                products.map(product => 
+                {
+                  return <Products product = {product} 
+                  key = {product.productId} 
+                  productCss = {productCss}
+                  productBtnText = {"Add to Basket"}/>
+                })
+              }
+              </div>
+            </div> 
          </Route>
          </Switch>
         </Router>
