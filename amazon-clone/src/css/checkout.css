@@ -46,7 +46,6 @@
     margin-bottom: 0.5rem;
 }
 .checkout-product{
-    width: 90%;
     margin: 2rem 1rem;
     padding: 1rem 1rem;
     background-color: #eaeded;
@@ -90,7 +89,6 @@
 }
 .checkout-product-remove-from-basket-btn{
     margin-top: 0.5rem;
-    width: 30%;
     margin-bottom: 0.5rem;
     background-color: #febd69;
     cursor: pointer;
