@@ -1,13 +1,28 @@
 import React from 'react'
 import "../css/menu.css";
 import CloseIcon from '@material-ui/icons/Close';
-import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import { useStateValue} from "../StateProvider";
 function Menu(props) 
 {
-    
+    const [state, dispatch] = useStateValue();
+    let history = useHistory();
+    let userName = state.user;
     let isOpen = props.isOpen;
     let setMenu = props.setMenu;
     let menu_container_classname;
+    let signInBtnText;
+
+    //If the user is signed in then display SignIn else display SignOut
+    if(state.user === "Hello Guest")
+    {
+        signInBtnText = "SignIn";
+    }
+    else{
+        signInBtnText = "SignOut";
+    }
+
+    //Determining if we have to show the menu or not
     if(isOpen === true)
     {
         menu_container_classname = "menu-container-active";
@@ -16,6 +31,7 @@ function Menu(props)
     {
         menu_container_classname = "menu-container-inactive";
     }
+
     return (
         <div className = {menu_container_classname}>
             
@@ -24,34 +40,37 @@ function Menu(props)
             onClick = {() => setMenu()}/>
 
             <div className = "menu-welcome-title">
-                <h3>Hello User</h3>
+                <h3>{userName}</h3>
             </div>
             
             <ul className = "menu-link-list-container">
-                
-                <Link className = "link">
-                <li className = "list-item">
+            
+                <li className = "list-item" onClick = {() => {
+                    setMenu();
+                    history.push("/");
+                }}>
                     Home    
                 </li>
-                </Link>
                 
+                <li className = "list-item" onClick = {() => {
+                    setMenu();
+                    history.push("/checkout");
+                }}>
+                    Your Cart  
+                </li>
                 
-                <li className = "list-item">
-                    <Link to = "/checkout" className = "link item">
-                        Your Cart
-                    </Link>    
+                <li className = "list-item" onClick = {() => {
+                    setMenu();
+                    history.push("/signin");
+                }}>
+                    {signInBtnText}
                 </li>
 
-                <li className = "list-item">
-                    <Link to = "#" className = "link item">
-                        SignIn
-                    </Link>    
-                </li>
-
-                <li className = "list-item">
-                    <Link to = "#" className = "link item">
-                        Your Orders
-                    </Link>    
+                <li className = "list-item" onClick = {() => {
+                    setMenu();
+                    history.push("/");
+                }}>
+                    Home
                 </li>
             </ul>
         </div>

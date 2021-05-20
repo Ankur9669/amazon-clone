@@ -39,6 +39,8 @@
     padding-inline-start: 0px;
 }
 .list-item{
+    color:black;
+    margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem;
