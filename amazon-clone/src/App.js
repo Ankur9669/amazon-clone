@@ -4,11 +4,12 @@ import HomeImage from "./components/HomeImageComponent";
 import Products from "./components/Product";
 import {useState} from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import CheckOut from "./components/YourCart";
+import CheckOut from "./components/CheckoutComponent";
 import { useStateValue } from './StateProvider';
 import { auth } from "./firebase";
 import { useEffect } from "react";
 import LoginComponent from './components/LoginComponent';
+import Payment from './components/Payment';
 function App() 
 {
   let products = [
@@ -96,6 +97,12 @@ function App()
           <Route path = "/signin">
            <Navbar/>
            <LoginComponent/>
+          </Route>
+
+          {/*Login page */}
+          <Route path = "/payments">
+           <Navbar/>
+           <Payment/>
           </Route>
 
             {/* HomePage */}

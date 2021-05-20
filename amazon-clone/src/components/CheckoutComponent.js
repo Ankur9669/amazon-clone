@@ -1,5 +1,5 @@
 import React from 'react'
-import "../css/yourcart.css";
+import "../css/checkout.css";
 import { getBasketTotal, getBasketTotal1 } from '../Reducer';
 import { useStateValue } from '../StateProvider';
 import Product from './Product';

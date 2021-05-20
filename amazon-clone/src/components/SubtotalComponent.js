@@ -1,7 +1,8 @@
 import React from 'react'
-
+import { useHistory} from "react-router-dom";
 function SubtotalComponent(props) 
 {
+    let history = useHistory();
     let totalNumberOfItems = props.totalNumberOfItems;
     let basketTotal = props.basketTotal;
     return (
@@ -10,7 +11,8 @@ function SubtotalComponent(props)
             <strong>${basketTotal}</strong></p>
             <input type = "checkbox" id = "gift"></input>
             <label for = "gift" className = "gift-label">This order contains a gift</label>
-            <button className = "checkout-button">Proceed to checkout</button>
+            <button className = "checkout-button" 
+            onClick = {() => history.push("/payments")}>Proceed to checkout</button>
         </div>
     )
 }
