@@ -84,22 +84,21 @@ function App()
     <div className="app">
        <Router>
          <Switch>
+           {/*Checkout Page */}
           <Route path="/checkout">
-            {/* NavBar Component */}
             <Navbar/>
             <div className = "checkout-page-container">
               <CheckOut/>
             </div>
           </Route>
           
-        <Route path = "/signin">
-          <LoginComponent/>
-        </Route>
+          {/*Login page */}
+          <Route path = "/signin">
+           <LoginComponent/>
+          </Route>
 
-         <Route exact path = "/">
-           {/* HomePage */}
-          
-           {/* NavBar Component */}
+            {/* HomePage */}
+          <Route exact path = "/">
            <Navbar/>
            <div className = "home-page-container">
               {/* HomeImage */}
