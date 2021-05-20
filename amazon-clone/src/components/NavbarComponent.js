@@ -6,6 +6,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
 import {auth} from "../firebase";
+import { useState } from "react";
+import Menu from "./Menu";
 function NavbarComponent(props) 
 {
 
@@ -19,6 +21,7 @@ function NavbarComponent(props)
     }
     
     const [state, dispatch] = useStateValue();
+    const[isOpen, setMenu] = useState(false);//For Hamburger icon
     let signInBtnText;
 
     //If the user is signed in then display SignIn else display SignOut
@@ -29,11 +32,14 @@ function NavbarComponent(props)
     else{
         signInBtnText = "SignOut";
     }
-    return (
-        <div className = "navbar">
 
+    return (
+        <>
+            <div className = "navbar">
             {/* Menu icon */}
-            <MenuIcon className = "navbar-menu-icon"/>
+            <MenuIcon className = "navbar-menu-icon" 
+            onClick = {() => setMenu(!isOpen)}/>
+
 
             <Link to = "/">
             {/* Amazon icon */}
@@ -84,8 +90,10 @@ function NavbarComponent(props)
                 <ShoppingCartIcon className = "options-shopping-cart-icon"/>
             </div>   
             </Link>
-            
-        </div>
+            </div>
+
+            <Menu isOpen = {isOpen} setMenu = {() => setMenu(!isOpen)}/>
+        </>         
     )
 }
 
