@@ -33,7 +33,7 @@
         margin-right: 10px;  
     }
     
-    @media screen and (max-width: 353px){
+    @media screen and (max-width: 450px){
         .navbar{
             height: 140px;
         }
@@ -50,6 +50,7 @@
     color:white;
     padding: 2px;
     margin-left: 5px;
+    cursor: pointer;
 }
 .navbar-amazon-icon{
     width: 90px;

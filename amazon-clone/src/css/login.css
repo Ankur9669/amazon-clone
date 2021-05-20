@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     justify-content: center;
     background-color: white;
 }
@@ -30,6 +32,7 @@
 .text-email{
     margin: 0rem 0.5rem;
     height: 25px;
+    border: 2px solid black;
 }
 .label-password{
     margin: 0.5rem 0.5rem;
@@ -38,6 +41,7 @@
 .text-password{
     margin: 0rem 0.5rem;
     height: 25px;
+    border: 2px solid black;
 }
 .sign-in-btn{
     margin: 1.5rem 0.5rem;

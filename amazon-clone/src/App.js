@@ -94,6 +94,7 @@ function App()
           
           {/*Login page */}
           <Route path = "/signin">
+           <Navbar/>
            <LoginComponent/>
           </Route>
 

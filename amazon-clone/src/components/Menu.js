@@ -70,7 +70,7 @@ function Menu(props)
                     setMenu();
                     history.push("/");
                 }}>
-                    Home
+                    Your Orders
                 </li>
             </ul>
         </div>
