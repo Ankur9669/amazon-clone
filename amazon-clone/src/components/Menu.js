@@ -56,7 +56,7 @@ function Menu(props)
                     setMenu();
                     history.push("/checkout");
                 }}>
-                    Your Cart  
+                    Your Cart ({state.basket.length} items) 
                 </li>
                 
                 <li className = "list-item" onClick = {() => {

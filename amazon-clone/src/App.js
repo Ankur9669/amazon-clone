@@ -4,7 +4,7 @@ import HomeImage from "./components/HomeImageComponent";
 import Products from "./components/Product";
 import {useState} from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import CheckOut from "./components/CheckoutComponent";
+import CheckOut from "./components/YourCart";
 import { useStateValue } from './StateProvider';
 import { auth } from "./firebase";
 import { useEffect } from "react";

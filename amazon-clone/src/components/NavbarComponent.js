@@ -38,7 +38,8 @@ function NavbarComponent(props)
             <div className = "navbar">
             {/* Menu icon */}
             <MenuIcon className = "navbar-menu-icon" 
-            onClick = {() => setMenu(!isOpen)}/>
+            onClick = {() => setMenu(!isOpen)}
+            fontSize = "large"/>
 
 
             <Link to = "/">
