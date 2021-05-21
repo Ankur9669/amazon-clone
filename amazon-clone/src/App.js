@@ -9,6 +9,7 @@ import { useStateValue } from './StateProvider';
 import { auth } from "./firebase";
 import { useEffect } from "react";
 import LoginComponent from './components/LoginComponent';
+import ScrollToTop from "./components/ScrollToTop";
 import Payment from './components/Payment';
 function App() 
 {
@@ -86,8 +87,10 @@ function App()
        <Router>
          <Switch>
            {/*Checkout Page */}
+           
           <Route path="/checkout">
             <Navbar/>
+            <ScrollToTop/>
             <div className = "checkout-page-container">
               <CheckOut/>
             </div>
@@ -96,18 +99,21 @@ function App()
           {/*Login page */}
           <Route path = "/signin">
            <Navbar/>
+           <ScrollToTop/>
            <LoginComponent/>
           </Route>
 
           {/*Login page */}
           <Route path = "/payments">
            <Navbar/>
+           <ScrollToTop/>
            <Payment/>
           </Route>
 
             {/* HomePage */}
           <Route exact path = "/">
            <Navbar/>
+           <ScrollToTop/>
            <div className = "home-page-container">
               {/* HomeImage */}
               <HomeImage/>

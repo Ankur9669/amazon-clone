@@ -4,6 +4,7 @@ import { getBasketTotal, getBasketTotal1 } from '../Reducer';
 import { useStateValue } from '../StateProvider';
 import Product from './Product';
 import Subtotal from './SubtotalComponent';
+import ScrollToTop from "./ScrollToTop";
 function CheckoutComponent() 
 {
     const [state, dispatch] = useStateValue();
