@@ -4,9 +4,12 @@ import { useStateValue } from '../StateProvider';
 import Product from "../components/Product";
 import { getBasketTotal } from '../Reducer';
 import SubtotalComponent from './SubtotalComponent';
+import { useElements, useStripe, CardElement } from '@stripe/react-stripe-js';
 function Payment() 
 {
     const [state, dispatch] = useStateValue();
+    const stripe = useStripe();
+    const elements = useElements();
     let totalItemsInBasket = state.basket?.length;
     let basket = state.basket;
     let basketTotal = getBasketTotal(state.basket);
@@ -50,6 +53,7 @@ function Payment()
                 <h3 className = "payment-method-label">Payment Method:</h3>
                 <div className = "payment-details-container">
                     <h3>Card Details</h3>
+                    <CardElement/>
                     <div className = "payment-total-price-container">
                         <h3>Order Total: ${basketTotal}</h3>
                         <button>Buy Now</button>

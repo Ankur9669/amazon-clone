@@ -11,6 +11,8 @@ import { useEffect } from "react";
 import LoginComponent from './components/LoginComponent';
 import ScrollToTop from "./components/ScrollToTop";
 import Payment from './components/Payment';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 function App() 
 {
   let products = [
@@ -55,8 +57,10 @@ function App()
     product_image_css: "product-image",
     product_btn_container_css: "product-btn-container",
     product_add_to_basket_btn_css: "product-add-to-basket-btn"
-  }
+  };
   const [user, dispatch] = useStateValue();
+
+  const promise = loadStripe("pk_test_51ItXdvSF1DG0iX3gF8W557q9tbde6y1s5XpUrbgQHBK7srlgFj3KJZSzRz8Lfv81Y04HxsZAzUcWuZl7vlHiEF9500CqdXbiVc");
 
   //This is load after the component is loaded
   useEffect(() => 
@@ -107,7 +111,10 @@ function App()
           <Route path = "/payments">
            <Navbar/>
            <ScrollToTop/>
-           <Payment/>
+           <Elements stripe = {promise}>
+              <Payment/>
+           </Elements>
+           
           </Route>
 
             {/* HomePage */}

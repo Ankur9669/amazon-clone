@@ -3,8 +3,11 @@ import "../css/menu.css";
 import CloseIcon from '@material-ui/icons/Close';
 import { useHistory } from "react-router-dom";
 import { useStateValue} from "../StateProvider";
+import { useLocation } from "react-router-dom";
 function Menu(props) 
 {
+    const { pathname } = useLocation();
+    console.log(pathname);
     const [state, dispatch] = useStateValue();
     let history = useHistory();
     let userName = state.user;
@@ -68,7 +71,7 @@ function Menu(props)
 
                 <li className = "list-item" onClick = {() => {
                     setMenu();
-                    history.push("/");
+                    history.push("/payment");
                 }}>
                     Your Orders
                 </li>
