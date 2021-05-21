@@ -71,7 +71,7 @@ function Menu(props)
 
                 <li className = "list-item" onClick = {() => {
                     setMenu();
-                    history.push("/payment");
+                    history.push("/payments");
                 }}>
                     Your Orders
                 </li>
