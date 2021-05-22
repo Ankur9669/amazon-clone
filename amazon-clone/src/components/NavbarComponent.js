@@ -8,15 +8,21 @@ import { useStateValue } from '../StateProvider';
 import {auth} from "../firebase";
 import { useState } from "react";
 import Menu from "./Menu";
+import { useHistory } from "react-router-dom";
 function NavbarComponent(props) 
 {
 
+    let history = useHistory();
     function handleAuthentication()
     {
         //If the user is logged in then
         if(!(state.user === "Hello Guest"))
         {
-            auth().signOut();
+            dispatch({
+                type: "EMPTY_BASKET"
+            })
+            history.replace("/")
+            auth().signOut();//Here we sign out
         }
     }
     
@@ -63,18 +69,20 @@ function NavbarComponent(props)
             just log out */}
             <Link to = {!(state.user != "Hello Guest") && "/signin"} className = "link">
             <div onClick = {handleAuthentication} className = "navbar-option">
-                <p className = "navbar-option-line-one">{state.user}</p>
+                <p className = "navbar-option-line-one"><small>{state.user}</small></p>
                 <p className = "navbar-option-line-two">{signInBtnText}</p>
             </div>
             </Link>
 
             {/* option-2 */}
+            <Link to = "/orders">
             <div className = "navbar-option">
                 <button>
                 <p className = "navbar-option-line-one">Returns</p>
                 <p className = "navbar-option-line-two">&Orders</p>
                 </button>
             </div>
+            </Link>
 
             {/* option-3 */}
             <div className = "navbar-option">

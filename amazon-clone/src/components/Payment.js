@@ -68,9 +68,6 @@ function Payment()
                 //We go towards orders page here
                 history.replace("/orders");
             }, 1000);
-            
-
-
 
             //   db.collection("users").doc(state.user).collection("orders")
             //   .get().then(querySnapshot => {

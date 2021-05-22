@@ -1,28 +1,12 @@
 import React from 'react'
 import "../css/order.css";
 import { db } from "../firebase";
-import { useStateValue } from "../StateProvider";
+import { useState } from "react";
 import { useEffect } from "react"; 
+import { useStateValue } from "../StateProvider";
 import Product from "./Product";
 function Orders() 
 {
-    let [state, dispatch] = useStateValue();
-    useEffect(() => 
-    {
-        //Here we are getting the orders from db
-          db.collection("users")
-          .doc(state.user)
-          .collection("orders")
-          .get()
-          .then(querySnapshot => {
-              basket = querySnapshot.docs;
-                console.log(basket);
-              //  console.log(querySnapshot.docs.map(doc => doc.data()));
-              })
-        
-    }, [basket])
-
-
     let productCss = {
         product_container_css : "payment-product",
         product_title_css: "payment-product-title",
@@ -31,21 +15,53 @@ function Orders()
         product_rating_css: "payment-product-rating",
         product_image_container_css: "payment-product-image-container",
         product_image_css: "payment-product-image",
-        product_btn_container_css: "payment-product-btn-container",
+        product_btn_container_css: "orders-product-btn-container",
         product_add_to_basket_btn_css: "payment-product-remove-from-basket-btn"
     }
-    let basket = [];
+
+    const [state, dispatch] = useStateValue();
+    const [orders, setOrders] = useState([]);
+    useEffect(() => 
+    {
+        let temp = [];
+        //Here we are getting the orders from db
+          db.collection("users")
+          .doc(state?.user)
+          .collection("orders")
+          .doc(state?.user)
+          .get()
+          .then(doc => 
+           {
+               if(doc.exists)
+               {
+                    doc.data().basket?.map(item => 
+                    {
+                        temp = [...temp, item];
+                    })
+               } 
+              setOrders(temp);
+          })
+        
+    }, [])
+
+
+   
+   
     return (
-        <div>
+        <div className = "orders-page">
+             <h1>Your Orders</h1>
+            <div className = "orders-product-container">
             {
-            basket.map(item => {
-                        //console.log(item);
+            orders?.map(item => {
+                        console.log(item);
                         return <Product product = {item} 
                         key = {item.id}
                         productCss = {productCss}
                         productBtnText = {"Remove from basket"}/>
                     })
             }
+            </div>
+            <h1>Thanks for shopping with us</h1>
         </div>
     )
 }
