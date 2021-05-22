@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Payment from './components/Payment';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from './components/Orders';
 function App() 
 {
   let products = [
@@ -98,6 +99,12 @@ function App()
             <div className = "checkout-page-container">
               <CheckOut/>
             </div>
+          </Route>
+
+          <Route path="/orders">
+            <Navbar/>
+            <ScrollToTop/>
+            <Orders/>
           </Route>
           
           {/*Login page */}
