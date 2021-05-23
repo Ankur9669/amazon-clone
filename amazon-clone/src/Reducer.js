@@ -1,6 +1,7 @@
 export const initialState = {
     basket: [],
     user: "Hello Guest",
+    popup: false,
 }
 
 // export const getBasketTotal = (basket) => 
@@ -57,6 +58,12 @@ const reducer = (state, action) => {
         return{
             ...state,
             basket: [],
+        }
+
+        case "SET_POP_UP":
+        return{
+            ...state,
+            popup: !(state.popup),
         }
         default:
             return state;

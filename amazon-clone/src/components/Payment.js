@@ -38,6 +38,7 @@ function Payment()
         if(state.user === "Hello Guest")
         {
             alert("You need to sign in first to make a payment");
+            history.push("/signin");
         }
         else{
 
@@ -68,11 +69,6 @@ function Payment()
                 //We go towards orders page here
                 history.replace("/orders");
             }, 1000);
-
-            //   db.collection("users").doc(state.user).collection("orders")
-            //   .get().then(querySnapshot => {
-            //       console.log(querySnapshot.docs.map(doc => doc.data()));
-            //   })
         }
     }
 

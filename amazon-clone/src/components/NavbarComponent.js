@@ -9,10 +9,14 @@ import {auth} from "../firebase";
 import { useState } from "react";
 import Menu from "./Menu";
 import { useHistory } from "react-router-dom";
+
 function NavbarComponent(props) 
 {
-
+    const [state, dispatch] = useStateValue();
+    const[isOpen, setMenu] = useState(false);//For Hamburger icon
+    let signInBtnText;
     let history = useHistory();
+
     function handleAuthentication()
     {
         //If the user is logged in then
@@ -25,11 +29,14 @@ function NavbarComponent(props)
             auth().signOut();//Here we sign out
         }
     }
-    
-    const [state, dispatch] = useStateValue();
-    const[isOpen, setMenu] = useState(false);//For Hamburger icon
-    let signInBtnText;
 
+    function onSearch()
+    {
+        dispatch({
+            type: "SET_POP_UP",
+        })
+    }
+    
     //If the user is signed in then display SignIn else display SignOut
     if(state.user === "Hello Guest")
     {
@@ -58,7 +65,7 @@ function NavbarComponent(props)
             {/* Search Bar Input */}     
             <input type = "text" className = "navbar-input" placeholder = "Enter the text"></input>
 
-            <button>
+            <button onClick = {onSearch}>
             {/* Search Bar Icon */}
             <SearchIcon className = "navbar-search-icon"/>
             </button>

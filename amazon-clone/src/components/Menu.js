@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 function Menu(props) 
 {
     const { pathname } = useLocation();
-    
     const [state, dispatch] = useStateValue();
     let history = useHistory();
     let userName = state.user;
@@ -15,6 +14,24 @@ function Menu(props)
     let setMenu = props.setMenu;
     let menu_container_classname;
     let signInBtnText;
+    let activeMenuItem;
+
+    if(pathname === "/")
+    {
+        activeMenuItem = "home";
+    }
+    else if(pathname === "/orders")
+    {
+        activeMenuItem = "orders";
+    }
+    else if(pathname === "/payments")
+    {
+        activeMenuItem = "payments";
+    }
+    else if(pathname === "/checkout")
+    {
+        activeMenuItem = "checlou";
+    }
 
     //If the user is signed in then display SignIn else display SignOut
     if(state.user === "Hello Guest")

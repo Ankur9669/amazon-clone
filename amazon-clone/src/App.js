@@ -59,7 +59,7 @@ function App()
     product_btn_container_css: "product-btn-container",
     product_add_to_basket_btn_css: "product-add-to-basket-btn"
   };
-  const [user, dispatch] = useStateValue();
+  const [state, dispatch] = useStateValue();
 
   const promise = loadStripe("pk_test_51ItXdvSF1DG0iX3gF8W557q9tbde6y1s5XpUrbgQHBK7srlgFj3KJZSzRz8Lfv81Y04HxsZAzUcWuZl7vlHiEF9500CqdXbiVc");
 
