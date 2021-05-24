@@ -91,8 +91,8 @@ function App()
     <div className="app">
        <Router>
          <Switch>
-           {/*Checkout Page */}
-           
+
+          {/*Checkout Page */} 
           <Route path="/checkout">
             <Navbar/>
             <ScrollToTop/>
@@ -101,6 +101,7 @@ function App()
             </div>
           </Route>
 
+          {/*Orders Page */}
           <Route path="/orders">
             <Navbar/>
             <ScrollToTop/>
@@ -114,7 +115,7 @@ function App()
            <LoginComponent/>
           </Route>
 
-          {/*Login page */}
+          {/*payments page */}
           <Route path = "/payments">
            <Navbar/>
            <ScrollToTop/>
@@ -124,7 +125,7 @@ function App()
            
           </Route>
 
-            {/* HomePage */}
+          {/* HomePage */}
           <Route exact path = "/">
            <Navbar/>
            <ScrollToTop/>

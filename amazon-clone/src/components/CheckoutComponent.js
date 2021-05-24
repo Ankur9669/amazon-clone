@@ -10,6 +10,7 @@ function CheckoutComponent()
     const [state, dispatch] = useStateValue();
     let basket = state.basket;
 
+    //getBasketTotal is a function defined in reducer.js
     let basketTotal = getBasketTotal(basket);
     
     let productCss = {

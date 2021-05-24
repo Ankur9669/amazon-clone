@@ -1,8 +1,11 @@
 import React from 'react'
 import "../css/product.css";
 import { useStateValue } from '../StateProvider';
+import Popup from "../components/PopUp";
+import { useState } from "react";
 function Product(props)
 {
+    //These are the details of product
     let product = props.product;
     let productTitle = product.productTitle;
     let productPrice = product.productPrice;
@@ -23,6 +26,7 @@ function Product(props)
     let product_add_to_basket_btn_css = productCss.product_add_to_basket_btn_css;
 
     const [state, dispatch] = useStateValue();
+    const[show, setShow] = useState(false);
     function onClick(buttonText)
     {
       buttonText = buttonText.toLowerCase();
@@ -40,6 +44,11 @@ function Product(props)
         type: "ADD_TO_BASKET",
         item: product,
       });
+      //setShow(false)
+      setShow(true);
+      setTimeout(() => {
+        setShow(false)
+      }, 500);
     }
 
     function removeFromBasket()
@@ -48,6 +57,10 @@ function Product(props)
         type: "REMOVE_FROM_BASKET",
         item: product,
       });
+      setShow(true);
+      setTimeout(() => {
+        setShow(false)
+      }, 500);
     }
     
     return (
@@ -77,7 +90,8 @@ function Product(props)
             <button className = {product_add_to_basket_btn_css}
             onClick = {() => onClick(productBtnText)}>{productBtnText}</button>
         </div>
-        
+
+        {show && <Popup open = {show} btntext = {productBtnText}/>}
       </div>
     )
 }
